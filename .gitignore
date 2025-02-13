@@ -1,0 +1,20 @@
+# IDE files
+*.idea
+# Match folder
+/match-0.14
+# Python folder
+RPi/__pycache__
+# STT data algorithm files
+RPi/stt_data/img.fits
+RPi/stt_data/matched.*
+RPi/stt_data/sext
+RPi/stt_data/test.cat
+RPi/stt_data/new_cat
+# Catalog files
+RPi/Catalog/RPi/Normal/*
+RPi/Catalog/RPi/Projected/*
+# venv
+.venv/
+venv/
+# compiled protobuf
+*_pb2.py
