@@ -1,5 +1,51 @@
 # SPEL - Open Star Tracker (SOST)
 
+## Idaho Interstellars Modification
+
+### Star Tracker Linux Setup
+1. Clone the repo
+```bash
+git clone https://github.com/incognitosushiroll/UIdahoInterstellars
+```
+2. Install dependencies
+```bash
+sudo apt install build-essential protobuf-compiler python3-venv socat
+```
+3. Setup project
+```bash
+cd UIdahoInterstellars/RPi
+./linux_installer.sh
+./extract_cat.sh
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+protoc --python_out=. stt.proto
+```
+
+Now you can run the demo on your device \:)
+
+### Star Tracker Serial Communication Demo
+Do this once you have setup the project.
+1. Create a fake serial "cable":
+```bash
+socat -d2 pty,raw,echo=0 pty,raw,echo=0
+```
+Note the two paths that socat prints: `/dev/pts/x` and `/dev/pts/y`.
+2. Start `stt.py`:
+```bash
+cd ~/Star_Tracker/RPi
+source .venv/bin/activate
+python stt.py /dev/pts/x # replace x with what socat returned
+```
+3. Use `demo.py`:
+```bash
+cd ~/Star_Tracker/RPi
+source .venv/bin/activate
+python demo.py /dev/pts/y sample_rpi 5 -n 22 # replace y with what socat returned
+```
+Try different values for `-n` (chooses a sample image from `Star_Tracker/RPi/Sample_images/RPi`). See `python demo.py -h` for more options.
+![stt-serial-protobuf-demo](https://github.com/user-attachments/assets/f194bcae-0990-4d7b-b6ff-a53cc1892e16)
+
 ## 1.- Overview
 
 This GitHub offers to the CubeSat research community an open-source Star Tracker (STT), 
