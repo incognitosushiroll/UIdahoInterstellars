@@ -1,17 +1,18 @@
 # SPEL - Open Star Tracker (SOST)
 
 ## Idaho Interstellars Modification
+This project -> capstone -> modifies the SPEL SOST project to do the following: . Our hardware list: 
 
 ### Star Tracker Linux Setup
 1. Clone the repo
 ```bash
 git clone https://github.com/incognitosushiroll/UIdahoInterstellars
 ```
-2. Install dependencies
+2. Install dependencies //Change//
 ```bash
 sudo apt install build-essential protobuf-compiler python3-venv socat
 ```
-3. Setup project
+3. Setup project //Change//
 ```bash
 cd UIdahoInterstellars/RPi
 ./linux_installer.sh
@@ -22,10 +23,8 @@ pip install -r requirements.txt
 protoc --python_out=. stt.proto
 ```
 
-Now you can run the demo on your device \:)
-
-### Star Tracker Serial Communication Demo
-Do this once you have setup the project.
+### Part 1: Star Tracker Serial Communication Demo with Virtual Serial Ports
+Perform the steps in this section if you only wish to use virtual ports and one device running both the CubeSat software and the Star Tracker software. No additional hardware other than the RPi 5 with your set-up microSD card is needed. This part also does not utilize an attached camera but uses the "sample_rpi" functions inside stt_selector.py to determine celestial coordinates from a sample photo onboard the microSD. 
 1. Create a fake serial "cable":
 ```bash
 socat -d2 pty,raw,echo=0 pty,raw,echo=0
@@ -46,7 +45,17 @@ python demo.py /dev/pts/y sample_rpi 5 -n 22 # replace y with what socat returne
 Try different values for `-n` (chooses a sample image from `Star_Tracker/RPi/Sample_images/RPi`). See `python demo.py -h` for more options.
 ![stt-serial-protobuf-demo](https://github.com/user-attachments/assets/f194bcae-0990-4d7b-b6ff-a53cc1892e16)
 
-## 1.- Overview
+### Part 2: Star Tracker Serial Communication via COM Ports Over UART Between a Windows Machine and RPi 5
+This part...
+1. Equipment:
+- UART cable (ask Ryan?)
+3. Create a fake serial "cable":
+```bash
+socat -d2 pty,raw,echo=0 pty,raw,echo=0
+```
+Insert photo of graph here. 
+
+## 1.- Overview of SOST 
 
 This GitHub offers to the CubeSat research community an open-source Star Tracker (STT), 
 developed at the Space and Planetary Exploration Laboratory (SPEL) at the University of Chile. 
