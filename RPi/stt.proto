@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message StarTrackerCommand {
+    string stt_type = 1;
+    int32 cat_division = 2;
+    int32 exp_time = 3;
+    int32 n_pic = 4;
+}
+
+message StarTrackerOutput {
+  float ra = 1;
+  float dec = 2;
+  float roll = 3;
+  float match_std_x = 4;
+  float match_std_y = 5;
+}

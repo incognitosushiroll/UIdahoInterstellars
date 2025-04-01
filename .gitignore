@@ -13,6 +13,7 @@ RPi/stt_data/new_cat
 # Catalog files
 RPi/Catalog/RPi/Normal/*
 RPi/Catalog/RPi/Projected/*
+RPi/Catalog/STEREO/*
 # venv
 .venv/
 venv/
