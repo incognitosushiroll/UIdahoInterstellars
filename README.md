@@ -33,6 +33,9 @@ sudo rm -rf /usr/lib/python3.11/EXTERNALLY-MANAGED
 cd ~/UIdahoInterstellars/RPi
 sudo apt-get install libjpeg-dev zlib1g-dev
 python3 -m pip install astropy pillow
+
+#Generate Python code from the Protocol Buffers file:
+protoc --python_out=. stt.proto
 ```
     ⚠️ This step may take some time depending on your internet connection and system resources.
 
