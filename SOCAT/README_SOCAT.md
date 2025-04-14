@@ -1,10 +1,38 @@
 # ⭐ Star Tracker Linux Setup
 
-This guide will walk you through setting up the Star Tracker project on a Linux system using socat for virtualization of ports and a single device.
+This guide will walk you through setting up the Star Tracker project on a Linux system using socat for virtualization of ports and a single device, as well as using Google Protocol Buffers.
 
 ---
 
-## 📦 1. Extract the Project Files
+
+## Star Tracker Serial Communication Demo:
+Do this once you have cloned the project.
+
+1. Create a fake serial "cable":
+```bash
+socat -d2 pty,raw,echo=0 pty,raw,echo=0
+```
+
+Note the two paths that socat prints: /dev/pts/x and /dev/pts/y.
+
+2. Start stt.py:
+```bash
+cd ~/Star_Tracker/RPi
+source .venv/bin/activate
+python stt.py /dev/pts/x # replace x with what socat returned
+```
+
+3. Use demo.py:
+```bash
+cd ~/Star_Tracker/RPi
+source .venv/bin/activate
+python demo.py /dev/pts/y sample_rpi 5 -n 22 # replace y with what socat returned
+```
+
+Try different values for -n (chooses a sample image from Star_Tracker/RPi/Sample_images/RPi). See python demo.py -h for more options.
+
+# Next, if you'd like to use the Google Protocol Buffer: 
+## 📦 1. Ready the Project Files
 
 After cloning the repo.
 
@@ -22,7 +50,7 @@ sudo apt install build-essential protobuf-compiler python3-venv socat
 
 Navigate to the project directory and complete the setup:
 ```bash
-cd uidaho-stt/RPi
+cd UIdahoInterstellars/SOCAT/RPi
 ./linux_installer.sh
 ./extract_cat.sh
 ```
