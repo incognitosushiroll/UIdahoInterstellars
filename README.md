@@ -2,6 +2,8 @@
 
 This guide provides the steps to set up the UI Interstellar Capstone Team Star Tracker system on a Raspberry Pi using the original SPEL SOST source code. 
 
+NOTE: This setup is used for those wanting a two-device system, with one device running the mimic_cubesat code and the other running the stt_test code to mimic the star tracker. These two devices are meant to be set-up using UART and serial ports. If you don't wish to use this additional hardware, follow the instructions inside the SOCAT folder for a virtual port implementation. 
+
 ## 📦 Repository Setup
 
 After cloning the repository, navigate to the correct directory and run the setup scripts:
