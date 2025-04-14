@@ -354,8 +354,9 @@ def solve_lis(img_full_dir, catalog_division, stt_data_dir, lis_type="rpi"):
     tm1 = time.time()
     # Apply SExtractor.
     if lis_type == "rpi":
-        str_fits = "img.fits"
-        img_fits_name = "{}/{}".format(stt_data_dir, str_fits)
+        base_name = os.path.splitext(os.path.basename(img_full_dir))[0]  # e.g., stt_img1
+        str_fits = f"{base_name}.fits"
+        img_fits_name = os.path.join(stt_data_dir, str_fits)
         jpg2fits(img_full_dir, img_fits_name)
     elif lis_type == "stereo":
         str_fits = img_full_dir
