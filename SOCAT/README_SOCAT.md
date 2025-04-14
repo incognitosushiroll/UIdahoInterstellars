@@ -17,14 +17,14 @@ Note the two paths that socat prints: /dev/pts/x and /dev/pts/y.
 
 2. Start stt.py:
 ```bash
-cd ~/Star_Tracker/RPi
+cd ~/UIdahoInterstellars/SOCAT
 source .venv/bin/activate
 python stt.py /dev/pts/x # replace x with what socat returned
 ```
 
 3. Use demo.py:
 ```bash
-cd ~/Star_Tracker/RPi
+cd ~/UIdahoInterstellars/SOCAT
 source .venv/bin/activate
 python demo.py /dev/pts/y sample_rpi 5 -n 22 # replace y with what socat returned
 ```
@@ -50,7 +50,7 @@ sudo apt install build-essential protobuf-compiler python3-venv socat
 
 Navigate to the project directory and complete the setup:
 ```bash
-cd UIdahoInterstellars/SOCAT/RPi
+cd UIdahoInterstellars/SOCAT
 ./linux_installer.sh
 ./extract_cat.sh
 ```
