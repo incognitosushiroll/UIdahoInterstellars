@@ -12,7 +12,7 @@ sh linux_installer.sh
 sudo sh extract_cat.sh
 ```
 
-##🔧 Dependencies
+🔧 Dependencies
 
 Ensure the following Python packages are installed:
 ```bash
@@ -21,7 +21,7 @@ sudo apt install python3-numpy
 ```
     Note: If you encounter an error while installing astropy, it may be due to the environment being externally managed. See the fix below.
 
-##🛠️ Fix for EXTERNALLY-MANAGED Environment Error
+🛠️ Fix for EXTERNALLY-MANAGED Environment Error
 
 If you receive an error related to a managed environment while installing astropy, you can resolve it by:
 
@@ -34,14 +34,14 @@ python3 -m pip install astropy pillow
 ```
     ⚠️ This step may take some time depending on your internet connection and system resources.
 
-##🚀 Test the Setup
+🚀 Test the Setup
 
 Run the stt.py script with a sample dataset to verify your setup:
 
 ```bash
 python3 stt.py sample_rpi 5 --npic 2
 ```
-## 📚 Full Documentation
+📚 Full Documentation
 
 For the full instructions and original source code, visit the SPEL SOST GitHub repository:
 👉 https://github.com/spel-uchile/Star_Tracker/tree/master
