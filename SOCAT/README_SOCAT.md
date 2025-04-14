@@ -31,8 +31,8 @@ python demo.py /dev/pts/y sample_rpi 5 -n 22 # replace y with what socat returne
 
 Try different values for -n (chooses a sample image from Star_Tracker/RPi/Sample_images/RPi). See python demo.py -h for more options.
 
-# Next, if you'd like to use the Google Protocol Buffer: 
-## 📦 1. Ready the Project Files
+## Next, if you'd like to use the Google Protocol Buffer: 
+📦 1. Ready the Project Files
 
 After cloning the repo.
 
