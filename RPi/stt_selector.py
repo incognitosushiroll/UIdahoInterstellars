@@ -1,6 +1,9 @@
 import os
 import subprocess as sp
 
+file_dir = os.path.abspath(os.path.dirname(__file__))
+stt_dir = "{}/stt_data".format(file_dir)
+
 def get_photo_index():
     existing_files = [f for f in os.listdir(stt_dir) if f.startswith("stt_img") and f.endswith(".jpg")]
     indices = []
